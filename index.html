@@ -10,100 +10,360 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+
     <!--Linking local style sheet and script-->
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./script/script.js" ></script>
+    <script defer src="./script/script.js" ></script>
 
     <!--File personal style sheet-->
     <style>
         section {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position:relative;
         }
 
         .hero-img{
             width: 100%;
-            height: 100vh;
         }
 
         .hero-section{
-            background-image: url('./res/img/hero_section.jpg');
-            background-size: cover;
+            margin-top: 70px;
             width: 100%;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            border: solid black 10px;
-            margin: 0;
-            padding: 0;
+            position: relative;
         }
 
         .hero-text-div {
-        /*  border: solid black 5px;
-            background-color: rgba(0, 0, 0, 0.5); */
             color: white;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position:absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero-text-div span {
+            font-size: 2.5rem;
+            font-family: "Roboto Slab", serif;
+            font-weight: 700;
+            text-shadow: black;
+        }
+        .hero-text-div p {
+            font-size: 1.25rem;
+            font-family: "Roboto Slab", serif;
+            font-weight: 700;
+        }
+
+        .cur-section{
+            background-color: var(--secondary-blue);
+        }
+
+        .curriculam-div {
+            margin-top: 20px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .section-heading {
+            font-family: "Roboto Slab", serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+        }
+        .cur-vid {
+            margin-top: 100px;
+            border: black solid 10px;
+            border-radius: 35px;
+            width:420px;
+        }
+
+        .callout{
+            position: absolute;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
         }
 
-        .navbar {
+        .cur-live {
+            top: 0;
+            right: 0;
+            transform: translate(100%, 150%);
+        }
+
+        .cur-scale {
+            top: 0;
+            left: 0;
+            transform: translate(-110%, 90%);
+        }
+
+        .cur-struc {
+            bottom: 0;
+            right: 0;
+            transform: translate(-60%, 120%);
+        }
+
+        .call-head {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primery-blue);
+        }
+
+        .call-body {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.0rem;
+            font-weight: 600;
+            color: #777777;
+        }
+
+        .expert-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .expert-crd-grp{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        .expert-crd {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .expert-crd > img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .expert-crd > h1 {
             margin: 0;
             padding: 0;
+            margin-top: 10px;
+            font-size: 1.5rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            color: var(--primery-blue);
+        }
+        .expert-crd > p {
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            color: var(--secondary-gray);
         }
 
-        .navbar-nav{
-            margin-right: 20px;
-            gap: 20px;
+        .program-section {
+            background-color: var(--secondary-blue);
         }
 
-        .nav-link{
-            color: #00ade7;
-            position: relative;
-            overflow: hidden;
+        .program-div {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
         }
 
-        .nav-link::before {
-            content: '';
-            background-color: #00ade7;
-            position: absolute;
-            top: 90%;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            transition: all 0.5s;
-            transform: translateX(-100%);
+        .left-prgm-detail {
+            display: flex;
+            flex-direction: row;
+            width: 600px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transform: translateX(-10%);
         }
 
-        .nav-link:hover{
-            color: #00ade7;
+        .right-prgm-detail {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 600px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transform: translateX(10%);
         }
 
-        .nav-link:hover::before {
-            transform: translateX(0);   
+        .prgm-point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+            min-height: 100px;
         }
 
-        .r_active {
-            position: relative;
+        .prgm-point > span {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
         }
 
-        .r_active::before {
-            content: '';
-            background-color: #00ade7;
-            position: absolute;
-            top: 90%;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            transform: translateX(0);
+        .prgm-detail {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 10px;
         }
 
-        .r_black_border {
-            border: solid black 2px;
+        .prgm-detail > h3 {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primery-blue);
         }
+
+        .prgm-detail > p {
+            font-family: "Roboto", sans-serif;
+            font-size: 1.0rem;
+            font-weight: 500;
+            color: var(--secondary-gray);
+        }
+
+        footer {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        footer > p {
+            text-align: center;
+        }
+
+        @media (max-width: 900px){
+            .hero-text-div span {
+                font-size: 0.9rem;
+            }
+
+            .hero-text-div p {
+            font-size: 0.5rem;
+            }
+
+            section{
+                min-height: 10vh;
+            }
+
+            .curriculam-div{
+                margin: 10px;
+                margin-bottom: 100px;
+            }
+
+            .section-heading{
+                font-size: 1.5rem;
+            }
+
+            .cur-vid{
+                width: 260px;
+                border: solid black 5px;
+            }
+
+            .call-head {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .call-body {
+                font-size: 0.6rem;
+                font-weight: 400;
+            }
+
+            .cur-live{
+                transform: translate(20%, 50%);
+            }
+
+            .cur-scale {
+                transform: translate(-30%, 75%);
+            }
+
+            .expert-crd-grp {
+                margin-top: 20px;
+            }
+
+            .expert-crd > img {
+                width: 150px;
+            }
+
+            .expert-crd > h1 {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            .expert-crd > p {
+                font-size: 0.6rem;
+                font-weight: 400;
+            }
+
+            .left-prgm-detail{
+                flex-direction: column;
+                width: 100%;
+                transform: translateX(0);
+            }
+
+            .right-prgm-detail {
+                flex-direction: column;
+                width: 100%;
+                transform: translate(0);
+            }
+
+            .prgm-point > span {
+                font-size: 2.5rem;
+            }
+
+            .prgm-detail > h3 {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .prgm-detail > p{
+                font-size: 0.6rem;
+                font-weight: 400;
+            }
+
+            .expert-crd-grp {
+                width: 300px;
+                overflow: scroll;
+                padding: 20px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+        }
+
     </style>
 
     <script>
@@ -148,24 +408,105 @@
     <!--End of navigation bar-->
 
     <div class="hero-section">
-        <!--
         <img class="hero-img" src="./res/img/hero_section.jpg" alt="">
-        -->
         <div class="hero-text-div">
             <span>Unlocking Bright Futures</span> <span>Your Exclusive K12 Learning Adventure</span>
-            <p>AI-Powered Interactive Classes Guided by exprienced  Experts</p>
+            <p class="roboto-regular">AI-Powered Interactive Classes Guided by exprienced  Experts</p>
         </div>
     </div>
     
-    <section>
-        <div class="container-xl">
-            <img src="" alt="">
+    <section class="cur-section">
+        <div class="curriculam-div">
+            <h1 class="section-heading" >Outstanding Curriculum</h1>
+            <video class="cur-vid" autoplay muted poster="poster.jpg" loop>
+                <source src="./res/vid/child_studying_02.mp4" type="video/mp4">
+                <span class="vid-span"></span>
+            </video>
+            <div>
+                <div class="callout cur-live"><span class="call-head">Live class</span><span class="call-body">Interactive, Innovative</span><span class="call-body">Immersive</span></div>
+                <div class="callout cur-scale" ><span class="call-head">Full-Scale study</span><span class="call-body">All subject for</span><span class="call-body">class 1 to 10</span></div>
+                <div class="callout cur-struc"><span class="call-head">Systematic structure</span><span class="call-body">Gradual depth to</span> <span class="call-body">Build Solid Foundation</span></div>
+            </div>
         </div>
     </section>
 
     <section>
-        <h1>Second section </h1>
+        <div class="curriculam-div">
+            <h1 class="section-heading" >Meet Our Experts</h1>
+            <div class="expert-crd-grp">
+                <div class="expert-crd">
+                    <img src="./res/img/Madhu.jpeg" alt="Teacher Madhu image"/>
+                    <h1>Madhu Srivastava</h1>
+                    <p>20+ years of teaching exprience</p>
+                </div>
+                <div class="expert-crd" >
+                    <img src="./res/img/pratheesha.jpeg" alt="Teacher Madhu image" />
+                    <h1>Pratheesha R</h1>
+                    <p>5+ years of teaching exprience</p>
+                </div>
+                <div class="expert-crd">
+                    <img src="./res/img/isha.jpeg" alt="Teacher Madhu image" />
+                    <h1>Isha Bhola</h1>
+                    <p>12+ years of teaching exprience</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="program-section">
+        <div class="program-div">
+            <h1 class="section-heading">Our Programs</h1>
+
+            <div class="left-prgm-detail">
+                <div class="prgm-point"><span>01</span></div>
+                <div class="prgm-detail">
+                    <h3>Live Classes</h3>
+                    <p>Live classes are interactive online classes that are conducted in real-time, allowing students to participate and engage with the facilitator and co-learners.  </p>
+                </div>
+            </div>
+
+            <div class="right-prgm-detail">
+                <div class="prgm-point"><span>02</span></div>
+                <div class="prgm-detail">
+                    <h3>Self Learn videos</h3>
+                    <p>We provide animated videos and notes for students which help them in self learning.</p>
+                </div>
+            </div>
+
+            <div class="left-prgm-detail">
+                <div class="prgm-point" ><span>03</span></div>
+                <div class="prgm-detail">
+                    <h3>Mentor Support</h3>
+                    <p>Mentor support will be available for the students to ease their struggles.</p>
+                </div>
+            </div>
+
+            <div class="right-prgm-detail">
+                <div class="prgm-point"><span>04</span></div>
+                <div class="prgm-detail">
+                    <h3>Public Speaking</h3>
+                    <p>Give students an opportunity to explore themselves in extra curricular activites.</p>
+                </div>
+            </div>
+
+            <div class="left-prgm-detail">
+                <div class="prgm-point"><span>05</span></div>
+                <div class="prgm-detail">
+                    <h3>Subject wise Guidance</h3>
+                    <p>We ensure that the students are not left out with any queries related to the major subjects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div><img src="./res/img/logo.jpeg" alt="Brand logo" width="96px"/></div>
+        <p>Copyright to heyy guru @ 2024</p>
+    </footer>
+
+    <script>
+
+    </script>
 
 </body>
 </html>
