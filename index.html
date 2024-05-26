@@ -17,6 +17,12 @@
 
     <!--File personal style sheet-->
     <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         section {
             width: 100%;
             min-height: 100vh;
@@ -24,6 +30,8 @@
             justify-content: center;
             align-items: center;
             position:relative;
+            overflow-x: hidden;
+            padding: 10px;
         }
 
         .hero-img{
@@ -50,7 +58,14 @@
             position:absolute;
             bottom: 0;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scale(0);
+            transition: all 2s;
+            opacity: 0;
+        }
+
+        .hero_visible {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
         }
 
         .hero-text-div span {
@@ -102,24 +117,41 @@
             align-items: center;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            transition: all 1s;
         }
 
         .cur-live {
             top: 0;
             right: 0;
-            transform: translate(100%, 150%);
+            transform: translate(100%, 150%) scale(0);
+            opacity: 0;
+        }
+        .cur-live-visible {
+            transform: translate(100%, 150%) scale(1);
+            opacity: 1;
         }
 
         .cur-scale {
             top: 0;
             left: 0;
-            transform: translate(-110%, 90%);
+            transform: translate(-110%, 90%) scale(0);
+            opacity: 0;
         }
+        .cur_scale_visible {
+            transform: translate(-110%, 90%) scale(1);
+            opacity: 1;
+        }
+
 
         .cur-struc {
             bottom: 0;
             right: 0;
-            transform: translate(-60%, 120%);
+            transform: translate(-60%, 120%) scale(0);
+            opacity: 0;
+        }
+        .cur-struc-visible {
+            transform: translate(-60%, 120%) scale(1);
+            opacity: 1;
         }
 
         .call-head {
@@ -161,7 +193,13 @@
             padding: 10px;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            transition: all 2s;
+            opacity: 0;
         }
+        .expert-crd-visible {
+            opacity: 1;
+        }
+
 
         .expert-crd > img {
             width: 250px;
@@ -205,7 +243,13 @@
             width: 600px;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            transition: all 2s;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .left-prgm-detail-visible {
             transform: translateX(-10%);
+            opacity: 1;
         }
 
         .right-prgm-detail {
@@ -214,7 +258,13 @@
             width: 600px;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            transition: all 2s;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .right-prgm-detail-visible {
             transform: translateX(10%);
+            opacity: 1;
         }
 
         .prgm-point {
@@ -266,13 +316,122 @@
             text-align: center;
         }
 
-        @media (max-width: 900px){
+        .scale_zero {
+            transition: all 2s;
+            transform: scale(0);
+        }
+
+        .scale_one {
+            transform: scale(1);
+        }
+
+        /*Media query for the mobile devices*/
+        @media (max-width: 480px){ 
             .hero-text-div span {
                 font-size: 0.9rem;
             }
 
             .hero-text-div p {
-            font-size: 0.5rem;
+            font-size: 0.7rem;
+            }
+
+            section{
+                min-height: 10vh;
+            }
+
+            .curriculam-div{
+                margin: 10px;
+                margin-bottom: 100px;
+            }
+
+            .section-heading{
+                font-size: 1.25rem;
+            }
+
+            .cur-vid{
+                margin-top: 200px;
+                width: 320px;
+                border: solid black 5px;
+            }
+
+            .call-head {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .call-body {
+                font-size: 0.7rem;
+                font-weight: 400;
+            }
+
+            .cur-live{
+                transform: translate(0%, 50%);
+            }
+
+            .cur-scale {
+                transform: translate(0%, 150%);
+            }
+
+            .expert-crd-grp {
+                margin-top: 20px;
+            }
+
+            .expert-crd > img {
+                width: 150px;
+            }
+
+            .expert-crd > h1 {
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            .expert-crd > p {
+                font-size: 0.7rem;
+                font-weight: 400;
+            }
+
+            .left-prgm-detail{
+                flex-direction: column;
+                width: 100%;
+                transform: translateX(0);
+            }
+
+            .right-prgm-detail {
+                flex-direction: column;
+                width: 100%;
+                transform: translate(0);
+            }
+
+            .prgm-point > span {
+                font-size: 3.0rem;
+            }
+
+            .prgm-detail > h3 {
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+
+            .prgm-detail > p{
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+
+            .expert-crd-grp {
+                width: 300px;
+                overflow: scroll;
+                padding: 20px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+
+        /*media query for the tablet devices*/
+        @media (min-width: 480px) and (max-width: 768px){
+            .hero-text-div span {
+                font-size: 1.25rem;
+            }
+
+            .hero-text-div p {
+            font-size: 1.1rem;
             }
 
             section{
@@ -294,21 +453,21 @@
             }
 
             .call-head {
-                font-size: 0.9rem;
+                font-size: 1.0rem;
                 font-weight: 500;
             }
 
             .call-body {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
                 font-weight: 400;
             }
 
             .cur-live{
-                transform: translate(20%, 50%);
+                transform: translate(30%, 40%);
             }
 
             .cur-scale {
-                transform: translate(-30%, 75%);
+                transform: translate(-50%, 50%);
             }
 
             .expert-crd-grp {
@@ -320,11 +479,11 @@
             }
 
             .expert-crd > h1 {
-                font-size: 0.9rem;
+                font-size: 1.1rem;
                 font-weight: 500;
             }
             .expert-crd > p {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
                 font-weight: 400;
             }
 
@@ -341,21 +500,123 @@
             }
 
             .prgm-point > span {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
 
             .prgm-detail > h3 {
-                font-size: 0.9rem;
+                font-size: 1.25rem;
                 font-weight: 500;
             }
 
             .prgm-detail > p{
-                font-size: 0.6rem;
+                font-size: 1.1rem;
                 font-weight: 400;
             }
 
             .expert-crd-grp {
-                width: 300px;
+                width: 500px;
+                overflow: scroll;
+                padding: 20px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+        }
+
+        /*media query for the tablet devices*/
+        @media (min-width: 768px) and (max-width: 1200px){
+            .hero-text-div span {
+                font-size: 1.75rem;
+            }
+
+            .hero-text-div p {
+            font-size: 1.25rem;
+            }
+
+            section{
+                min-height: 10vh;
+                padding-bottom: 40px;
+            }
+
+            .curriculam-div{
+                margin: 10px;
+                margin-bottom: 100px;
+            }
+
+            .section-heading{
+                font-size: 2.5rem;
+            }
+
+            .cur-vid{
+                margin-top: 200px;
+                width: 480px;
+                border: solid black 5px;
+            }
+
+            .call-head {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            .call-body {
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+
+            .cur-live{
+                transform: translate(30%, 60%);
+            }
+
+            .cur-scale {
+                transform: translate(-50%, 110%);
+            }
+
+            .expert-crd-grp {
+                margin-top: 20px;
+                width: 70%;
+                overflow: scroll;
+            }
+
+            .expert-crd > img {
+                width: 250px;
+            }
+
+            .expert-crd > h1 {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            .expert-crd > p {
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+
+            .left-prgm-detail{
+                flex-direction: column;
+                width: 100%;
+                transform: translateX(0);
+            }
+
+            .right-prgm-detail {
+                flex-direction: column;
+                width: 100%;
+                transform: translate(0);
+            }
+
+            .prgm-point > span {
+                font-size: 3.5rem;
+            }
+
+            .prgm-detail > h3 {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+
+            .prgm-detail > p{
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+
+            .expert-crd-grp {
                 overflow: scroll;
                 padding: 20px;
                 justify-content: flex-start;
@@ -409,7 +670,7 @@
 
     <div class="hero-section">
         <img class="hero-img" src="./res/img/hero_section.jpg" alt="">
-        <div class="hero-text-div">
+        <div class="hero-text-div" id="hero_text_box">
             <span>Unlocking Bright Futures</span> <span>Your Exclusive K12 Learning Adventure</span>
             <p class="roboto-regular">AI-Powered Interactive Classes Guided by exprienced  Experts</p>
         </div>
@@ -423,9 +684,11 @@
                 <span class="vid-span"></span>
             </video>
             <div>
-                <div class="callout cur-live"><span class="call-head">Live class</span><span class="call-body">Interactive, Innovative</span><span class="call-body">Immersive</span></div>
-                <div class="callout cur-scale" ><span class="call-head">Full-Scale study</span><span class="call-body">All subject for</span><span class="call-body">class 1 to 10</span></div>
-                <div class="callout cur-struc"><span class="call-head">Systematic structure</span><span class="call-body">Gradual depth to</span> <span class="call-body">Build Solid Foundation</span></div>
+                <div class="callout cur-live" id="live_callout"><span class="call-head">Live class</span><span class="call-body">Interactive, Innovative</span><span class="call-body">Immersive</span></div>
+                
+                <div class="callout cur-scale" id="scale_callout" ><span class="call-head">Full-Scale study</span><span class="call-body">All subject for</span><span class="call-body">class 1 to 10</span></div>
+
+                <div class="callout cur-struc" id="struc_callout"><span class="call-head">Systematic structure</span><span class="call-body">Gradual depth to</span> <span class="call-body">Build Solid Foundation</span></div>
             </div>
         </div>
     </section>
@@ -435,17 +698,17 @@
             <h1 class="section-heading" >Meet Our Experts</h1>
             <div class="expert-crd-grp">
                 <div class="expert-crd">
-                    <img src="./res/img/Madhu.jpeg" alt="Teacher Madhu image"/>
+                    <img src="./res/img/madhu_nbg.png" alt="Teacher Madhu image"/>
                     <h1>Madhu Srivastava</h1>
                     <p>20+ years of teaching exprience</p>
                 </div>
                 <div class="expert-crd" >
-                    <img src="./res/img/pratheesha.jpeg" alt="Teacher Madhu image" />
+                    <img src="./res/img/pratheesha_nbg.png" alt="Teacher Madhu image" />
                     <h1>Pratheesha R</h1>
                     <p>5+ years of teaching exprience</p>
                 </div>
                 <div class="expert-crd">
-                    <img src="./res/img/isha.jpeg" alt="Teacher Madhu image" />
+                    <img src="./res/img/isha_nbg.png" alt="Teacher Madhu image" />
                     <h1>Isha Bhola</h1>
                     <p>12+ years of teaching exprience</p>
                 </div>
@@ -506,6 +769,99 @@
 
     <script>
 
+        const heroText = document.getElementById('hero_text_box');
+        const liveCall = document.getElementById('live_callout');
+        const scaleCall = document.getElementById('scale_callout');
+        const strucCall = document.getElementById('struc_callout');
+        //const callArr = [liveCall, scaleCall, strucCall];
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('hero_visible');
+            });
+        });
+        heroObserver.observe(heroText);
+
+        const callLiveObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log("live is visible now");
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('cur-live-visible');
+            });
+        });
+        callLiveObserver.observe(liveCall);
+
+        const callScaleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log("Scale is visible now");
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('cur_scale_visible');
+            });
+        });
+        callScaleObserver.observe(scaleCall);
+
+        const callstrucObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log("struc is visible now");
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('cur-struc-visible');
+            });
+        });
+        callstrucObserver.observe(strucCall);
+
+        // Method for experts animation
+        const experts = document.querySelectorAll('.expert-crd');
+        const expertObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('expert-crd-visible');
+            });
+        });
+
+        experts.forEach(expert => {
+            expertObserver.observe(expert);
+        });
+
+        // Animation for our programs 
+        const lpElements = document.querySelectorAll('.left-prgm-detail');
+        const lpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('left-prgm-detail-visible');
+            });
+        });
+
+        lpElements.forEach(lpElement => {
+            lpObserver.observe(lpElement);
+        });
+
+
+        const rpElements = document.querySelectorAll('.right-prgm-detail');
+        const rpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting)
+                    entry.target.classList.add('right-prgm-detail-visible');
+            });
+        });
+
+        rpElements.forEach(rpElement => {
+            rpObserver.observe(rpElement);
+        });
+
+        // Animation for the teachers display 
+        /*
+        callArr.forEach(function(callEle){
+            callObserver.observe(callEle);
+        });
+        */
     </script>
 
 </body>
