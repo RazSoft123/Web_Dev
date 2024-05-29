@@ -324,6 +324,65 @@
         .scale_one {
             transform: scale(1);
         }
+        .app-section {
+            background-color: var(--secondary-blue);
+        }
+        .app-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .app-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            min-width: 600px;
+            max-width: 900px;
+            gap: 30px;
+        }
+
+        .app-img {
+            width: 320px;
+        }
+        .app-detail{
+            gap: 30px;
+        }
+
+        .app-detail h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .app-detail p {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .btn-download-app {
+            text-decoration: none;
+            font-size: 1.75rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+            border: solid 5px transparent;
+            background-color: var(--primery-blue);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--secondary-gray);
+            transform: scale(1) scaleX(1);
+            transition: all 0.5s;
+        }
+
+        .btn-download-app:hover {
+            color: var(--primery-blue);
+            background-color: white;
+            border: solid 5px var(--primery-blue);
+            transform: scale(1.1) scaleX(1.25);
+            letter-spacing: 4px;
+        }
 
         /*Media query for the mobile devices*/
         @media (max-width: 480px){ 
@@ -422,6 +481,56 @@
                 justify-content: flex-start;
                 align-items: flex-start;
             }
+
+            .app-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-width: 250px;
+                max-width: 400px;
+                gap: 10px;
+            }
+            .app-img {
+                width: 250px;
+            }
+            .app-detail{
+                gap: 10px;
+                width: 250px;
+            }
+            .app-detail h3 {
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            .app-detail p {
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            .btn-download-app {
+                margin-top: 20px;
+                font-size: 1.5rem;
+                font-weight: 500;
+                padding: 10px 20px;
+                transform: scale(1) scaleX(1);
+                transition: all 0.5s;
+            }
+
+            .btn-download-app:hover {
+                color: var(--primery-blue);
+                background-color: white;
+                border: solid 5px var(--primery-blue);
+                transform: scale(1.1) scaleX(1.25);
+                letter-spacing: 2px;
+            }
+            .btn-download-app:focus {
+                color: var(--primery-blue);
+                background-color: white;
+                border: solid 5px var(--primery-blue);
+                transform: scale(1.1) scaleX(1.25);
+                letter-spacing: 2px;
+            }
+
+
         }
 
         /*media query for the tablet devices*/
@@ -520,6 +629,54 @@
                 justify-content: flex-start;
                 align-items: flex-start;
             }
+            .app-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-width: 300px;
+                max-width: 600px;
+                gap: 10px;
+            }
+            .app-img {
+                width: 250px;
+            }
+            .app-detail{
+                gap: 10px;
+                width: 480px;
+            }
+            .app-detail h3 {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            .app-detail p {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+            .btn-download-app {
+                margin-top: 20px;
+                font-size: 1.75rem;
+                font-weight: 500;
+                padding: 10px 20px;
+                transform: scale(1) scaleX(1);
+                transition: all 0.5s;
+            }
+
+            .btn-download-app:hover {
+                color: var(--primery-blue);
+                background-color: white;
+                border: solid 5px var(--primery-blue);
+                transform: scale(1.1) scaleX(1.25);
+                letter-spacing: 4px;
+            }
+            .btn-download-app:focus {
+                color: var(--primery-blue);
+                background-color: white;
+                border: solid 5px var(--primery-blue);
+                transform: scale(1.1) scaleX(1.25);
+                letter-spacing: 4px;
+            }
+
 
         }
 
@@ -622,6 +779,27 @@
                 justify-content: flex-start;
                 align-items: flex-start;
             }
+            .app-card {
+                width: 600px;
+            }
+
+            .app-img {
+                width: 250px;
+            }
+
+            .btn-download-app{
+                padding: 15px 30px;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            .btn-download-app:hover {
+            color: var(--primery-blue);
+            background-color: white;
+            border: solid 5px var(--primery-blue);
+            transform: scale(1.1) scaleX(1.25);
+            letter-spacing: 3px;
+        }
 
         }
 
@@ -649,7 +827,7 @@
                     <a class="nav-link r_active" aria-current="page" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Courses</a>
+                    <a class="nav-link" href="./course.html">Courses</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Scholarship Test</a>
@@ -658,7 +836,10 @@
                     <a class="nav-link" href="#">Download</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="./aboutus.html">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <button class="login-btn" onclick="show_loginform()" id="loginbtn">Login / Signup</button>
                   </li>
                 </ul>
               </div>
@@ -667,6 +848,26 @@
           </nav>
 
     <!--End of navigation bar-->
+    
+    <!--Login Form-->
+    <div class="main-popup" id="mainpopup">
+        <div class="login-box">
+            <div class="login-text-box">
+                <span class="login-span">LogIn</span>
+            </div>
+            <div class="login-input-box">
+                <label for="">Enter your Phone no</label>
+                <input type="tel" placeholder="Ex. 932056....">
+            </div>
+            <div class="login-input-box" >
+                <label for="">Enter your password</label>
+                <input type="password" placeholder="Your Password">
+            </div>
+            <button onclick="loginform()" class="login-btn">LogIn</button>
+            <p>Don't have an account <a href="./signup.html">SignUp</a></p>
+        </div>
+        <span class="close-btn" onclick="hide_login_form()">X</span>
+    </div>
 
     <div class="hero-section">
         <img class="hero-img" src="./res/img/hero_section.jpg" alt="">
@@ -759,6 +960,59 @@
                     <p>We ensure that the students are not left out with any queries related to the major subjects.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="review-section">
+        <div class="review-div">
+            <h1 class="section-heading">Our Customer Love Us</h1>
+            <div class="review-card-group">
+                <div class="review-card">
+                    <img src="" alt="">
+                    <p></p>
+                    <span>Playstore</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-section">
+        <div class="app-div">
+            <h1 class="section-heading">Unlock Exclusive Features with Our App</h1>
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="app-card">
+                        <img src="./res/img/app_img_1.png" class="app-img" alt="Heyy guru app screenshot">
+                        <div class="prgm-detail app-detail">
+                            <h3>Endless question papers and test papers</h3>
+                            <p> Dive into a sea of practice questions and past test papers. Sharpen your skills and conquer your exams with our mobile app.</p>    
+                        </div>
+                        
+                    </div>
+                </div>
+                  <div class="carousel-item">
+                    <div class="app-card">
+                        <img src="./res/img/app_img_2.png" class="app-img" alt="Heyy Guru App screenshot">
+                        <div class="prgm-detail app-detail">
+                            <h3>Bring Learning to Life with our Animated Videos</h3>
+                            <p> No more dull lectures! Our app uses captivating animated videos to explain concepts and reinforce learning with practice questions. Download and unlock a fun, effective way to study</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="app-card">
+                        <img src="./res/img/app_img_3.png" class="app-img" alt="Heyy Guru App screenshot">
+                        <div class="prgm-detail app-detail">
+                            <h3>Get Instant Help: Live Chat with Your Mentor & Tutor</h3>
+                            <p>Don't get stuck! Download our app and connect with expert mentors and tutors in real-time through live chat. Get personalized guidance and conquer any academic challenge.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+            <a class="btn-download-app" href="https://play.google.com/store/apps/details?id=co.lazarus.ruuzg&hl=as" target="_blank">Download Now</a>
         </div>
     </section>
 
